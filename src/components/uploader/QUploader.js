@@ -49,6 +49,7 @@ export default {
     filter: Function,
     extensions: String,
     multiple: Boolean,
+    capture: Boolean,
     hideUploadButton: Boolean,
     hideUploadProgress: Boolean,
     noThumbnails: Boolean,
@@ -469,7 +470,7 @@ export default {
             attrs: Object.assign({
               type: 'file',
               accept: this.extensions
-            }, this.multiple ? { multiple: true } : {}),
+            }, this.multiple ? { multiple: true } : {}, this.capture ? { capture: true } : {}),
             on: {
               change: this.__add
             }
